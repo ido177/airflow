@@ -59,8 +59,8 @@ class LivyOperator(BaseOperator):
             See Tenacity documentation at https://github.com/jd/tenacity
     """
 
-    template_fields: Sequence[str] = ("spark_params",)
-    template_fields_renderers = {"spark_params": "json"}
+    template_fields: Sequence[str] = ("spark_params", "env")
+    template_fields_renderers = {"spark_params": "json", "env": "list"}
 
     def __init__(
         self,
